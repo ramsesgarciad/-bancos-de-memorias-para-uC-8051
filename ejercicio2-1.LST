@@ -1,0 +1,64 @@
+C51 COMPILER V9.53.0.0   EJERCICIO2_1                                                      10/28/2015 20:43:09 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE EJERCICIO2_1
+OBJECT MODULE PLACED IN ejercicio2-1.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ejercicio2-1.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include <REG51.H>
+   2          
+   3          #define tabla_c 0x1000;
+   4          unsigned volatile xdata tabla _at_ 0x1000;
+   5          
+   6          
+   7           char  *puntero;
+   8            int x,ascii;
+   9            void delay(int);
+  10            
+  11          void main(void ){
+  12   1      
+  13   1        //tabla=0x07;
+  14   1        puntero= &tabla;
+*** WARNING C182 IN LINE 14 OF ejercicio2-1.c: pointer to different objects
+  15   1      for (x=0;x<10;x++)
+  16   1        //while(1)
+  17   1      {
+  18   2      
+  19   2        if(*puntero=='a'){P1=0x77;}//letra A 0111 0111
+  20   2        if(*puntero=='b'){P1=0xfc;}//letra b 1111 1011
+  21   2        if(*puntero=='c'){P1=0x39;}//letra C 0011 1001
+  22   2        if(*puntero=='d'){P1=0x5e;}//letra d 0101 1110 
+  23   2        if(*puntero=='e'){P1=0x79;}//letra e 0110 1001
+  24   2        if(*puntero=='f'){P1=0x71;}//letra F 0111 0001
+  25   2        if(*puntero=='g'){P1=0x6f;}//letra g 0110 1111
+  26   2        if(*puntero=='h'){P1=0x76;}//letra h 0111 0110
+  27   2        if(*puntero=='i'){P1=0x06;}//letra i 0000 0110
+  28   2        if(*puntero=='j'){P1=0x0e;}//letra j 0000 1110
+  29   2      
+  30   2        delay(3);
+  31   2          puntero++;
+  32   2      }}
+  33          x=0;
+  34          
+  35          void delay(int valor){
+  36   1         
+  37   1        int i , j ;
+  38   1        for(i=0 ;i<valor ;i++)
+  39   1        for(j=0 ;j<1275 ;j++);
+  40   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    169    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      7    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

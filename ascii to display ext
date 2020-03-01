@@ -1,0 +1,25 @@
+#include <REG51.H>
+
+
+void delay(int);
+
+void main(){
+
+	
+	while(1){
+P1=1;
+	delay(10);
+	P1=0;
+	delay(10);
+
+	}
+
+
+
+}
+void delay(int valor){
+int i , j ;
+	for(i=0 ;i<valor ;i++)
+	for(j=0 ;j<1275 ;j++);
+
+}
